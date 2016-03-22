@@ -29,7 +29,7 @@ var compareConfigFileName = config.paths.compare_data || 'compare/config.json';
 var viewports = config.viewports;
 var scenarios = config.scenarios||config.grabConfigs;
 var config_name = config.name || genConfigPath.hashCode();
-var fileNameTemplate = config.fileNameTemplate || "{configFile}_{scenarioIndex}_{scenarioLabel}_{selectorIndex}_{selectorLabel}_{viewportIndex}_{viewportLabel}";
+var fileNameTemplate = config.fileNameTemplate || "{scenarioIndex}_{selectorIndex}_{selectorLabel}_{viewportIndex}_{viewportLabel}";
 
 var compareConfig = {testPairs:[]};
 
@@ -187,7 +187,7 @@ function capturePageSelectors(url,scenarios,viewports,bitmaps_reference,bitmaps_
           if (!~fileName.search(/\.png$/)) {
               fileName = fileName + ".png";
           }
-          that.echo('Using filename pattern: ' + fileName);
+          // that.echo('Using filename pattern: ' + fileName);
 
           var reference_FP  = bitmaps_reference + '/' + fileName;
           var test_FP       = bitmaps_test + '/' + screenshotDateTime + '/' + fileName;
